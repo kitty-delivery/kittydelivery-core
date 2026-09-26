@@ -1,0 +1,24 @@
+[submodule "services/KittyDelivery_API"]
+	path = services/KittyDelivery_API
+	url = https://github.com/kitty-delivery/KittyDelivery_API.git
+[submodule "services/KittyDelivery_mc_user"]
+	path = services/KittyDelivery_mc_user
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_user.git
+[submodule "services/KittyDelivery_mc_restaurant"]
+	path = services/KittyDelivery_mc_restaurant
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_restaurant.git
+[submodule "services/KittyDelivery_mc_auth"]
+	path = services/KittyDelivery_mc_auth
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_auth.git
+[submodule "services/KittyDelivery_mc_component"]
+	path = services/KittyDelivery_mc_component
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_component.git
+[submodule "services/KittyDelivery_mc_notif"]
+	path = services/KittyDelivery_mc_notif
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_notif.git
+[submodule "services/KittyDelivery_mc_article"]
+	path = services/KittyDelivery_mc_article
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_article.git
+[submodule "services/KittyDelivery_mc_order"]
+	path = services/KittyDelivery_mc_order
+	url = https://github.com/kitty-delivery/KittyDelivery_mc_order.git

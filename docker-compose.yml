@@ -1,0 +1,67 @@
+# Orchestration locale des microservices KittyDelivery.
+# KittyDelivery_mc_log et KittyDelivery_mc_menu sont des depots vides (aucun code, pas de Dockerfile) :
+# ils ne sont pas definis ici tant qu'ils n'ont pas d'implementation.
+# Les squelettes express-generator (API, mc_user, mc_auth, mc_component, mc_notif, mc_article, mc_order)
+# n'ont pas de Dockerfile propre : ils utilisent le Dockerfile generique docker/node-express.Dockerfile,
+# base sur leur script "start": "node ./bin/www" (port 3000 par defaut), commun aux 7 services.
+# KittyDelivery_mc_restaurant a un Dockerfile et declare mongoose en dependance, mais son point d'entree
+# (index.js, declare comme "main" dans package.json) est absent du depot et aucun script "start" n'est
+# defini : le conteneur se build mais plante au lancement en l'etat. Il est laisse commente ci-dessous
+# en attendant que le code applicatif soit ajoute au depot.
+
+services:
+  api:
+    build:
+      context: ./services/KittyDelivery_API
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3001:3000"
+
+  mc-user:
+    build:
+      context: ./services/KittyDelivery_mc_user
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3002:3000"
+
+  # mc-restaurant:
+  #   build: ./services/KittyDelivery_mc_restaurant
+  #   ports:
+  #     - "3010:3010"
+  #   commente : le depot n'a pas de point d'entree (index.js absent, pas de script "start"),
+  #   le conteneur ne demarrerait pas. A reactiver une fois le code applicatif ajoute.
+
+  mc-auth:
+    build:
+      context: ./services/KittyDelivery_mc_auth
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3003:3000"
+
+  mc-component:
+    build:
+      context: ./services/KittyDelivery_mc_component
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3004:3000"
+
+  mc-notif:
+    build:
+      context: ./services/KittyDelivery_mc_notif
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3005:3000"
+
+  mc-article:
+    build:
+      context: ./services/KittyDelivery_mc_article
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3006:3000"
+
+  mc-order:
+    build:
+      context: ./services/KittyDelivery_mc_order
+      dockerfile: ../../docker/node-express.Dockerfile
+    ports:
+      - "3007:3000"
